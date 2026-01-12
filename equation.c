@@ -3,78 +3,43 @@
 
 void main ()
 {
-    int d ;
-    float Pi , D , Au , R , Pf ;
-    char N ;
-    
-    printf("entrer le nombre de kilomettrage D : \n");
-    scanf("%f",&D);
-    printf("entrer le type de voiture : \n");
-    scanf("%c",&N);
-    printf("entrer le nombre de jour de location d : \n");
-    scanf("%d",&d);
-
-    if ( D < 0 )
-    {
-      printf("Erreur \n");
-    }
-    else if ( D < 100)
-    {
-      Pi = D * 2 ; 
-    }
-    else if ( D < 300 )
-    {
-      Pi = D * 1.8 ;
-    }
-    else if ( D < 500 )
-    {
-      Pi = D * 1.2 ;
-    }
+    int a , b , c , D ; 
+    float x , x1 , x2 ;
+    printf("entrez les valeurs de a,b et c \n");
+    scanf("%d%d%d",&a,&b,&c);
+ 
+    if (a==0)
+      {if (b==0)
+         {if (c==0)
+           {
+            printf("l ensemble des solutions est R \n");
+           }
+          else
+           {
+            printf("l equation n admet aucune solution \n");
+           }
+         }
+       else
+         {
+          printf("elle devient une equation du premier degre %.2f",(float)-c/b);
+         }
+      }
     else
     {
-      Pi = D * 1.2 ;
+    D=pow(b,2)-4*a*c ;
+     if (D>0)
+         {
+          printf("l equation admet deux solution x1 = %.2f et x2 = %.2f \n",x1=(float)((-b-sqrt(D))/(2*a)),x2=(float)((-b+sqrt(D))/(2*a)));
+         } 
+     if (D==0)
+         {
+          printf("l equation admet une seule solution est : %.2f \n",x=(float)-b/(2*a));
+         }
+     if (D<0)
+         {
+          printf("l ensemble vide \n");
+         }
     }
 
-    switch ( N )
-    {
-    case 'L':
-      Au = Pi * 0.2 ;
-    case 'l' : 
-      Au = Pi * 0.2 ;
-      break;
-    case 'S':
-      Au = Pi * 0.1 ;
-    case 's' : 
-      Au = Pi * 0.1 ;
-      break; 
-    case 'E':
-      Au = Pi * 0 ;
-    case 'e' : 
-      Au = Pi * 0 ;
-      break;
-    default: printf("Erreur \n");
-      break;     
-    }
-    
-    if ( d < 0 )
-    {
-      printf("Erreur \n");
-    }
-    else if ( d > 5 )
-    {
-      R = Pi * 0.1 ;
-    }
-    else
-    {
-      R = 0 ;
-      printf("aucune reduction \n");
-    }
-    
-    Pf = Pi + Au - R ;
-
-    printf("le prix initial est : %.2f dh \n",Pi);
-    printf("augmentation selon le type de la voiture est : %.2f dh \n",Au);
-    printf("la reduction selon le nombre de jour de location est : -%.2f dh \n",R);
-    printf("le prix finale est : %.2f dh \n",Pf);
 
 }
