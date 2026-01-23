@@ -1,24 +1,20 @@
 #include<stdio.h>
 #include<math.h>
-
 void main ()
+
 {
-        int d ;
+  
+    int d ;
     float Pi , D , Au , R , Pf ;
     char N ;
     
-    printf("entrer le nombre de kilomettrage D : \n");
-    scanf("%f",&D);
-    printf("entrer le type de voiture : \n");
-    scanf("%c",&N);
-    printf("entrer le nombre de jour de location d : \n");
-    scanf("%d",&d);
+    do
+    {  
+      printf("entrer le nombre de kilomettrage D : \n");
+      scanf("%f",&D);
+    } while ( D < 0 );
 
-    if ( D < 0 )
-    {
-      printf("Erreur \n");
-    }
-    else if ( D < 100)
+    if ( D < 100)
     {
       Pi = D * 2 ; 
     }
@@ -34,6 +30,12 @@ void main ()
     {
       Pi = D * 1.2 ;
     }
+    
+    do
+    {
+      printf("entrer le type de voiture : \n");
+      scanf(" %c",&N);
+    } while ( N !='L' && N !='l' && N !='S' && N !='s' && N !='E' && N !='e' );
 
     switch ( N )
     {
@@ -51,11 +53,17 @@ void main ()
       Au = Pi * 0 ;
     case 'e' : 
       Au = Pi * 0 ;
-      break;
-    default: printf("Erreur \n");
-      break;     
+      break;   
+    default :
+    printf("Erreur \n");
     }
     
+    do
+    {
+      printf("entrer le nombre de jour de location d : \n");
+      scanf("%d",&d);
+    } while ( d < 0 );
+
     if ( d < 0 )
     {
       printf("Erreur \n");
@@ -73,7 +81,7 @@ void main ()
     Pf = Pi + Au - R ;
 
     printf("le prix initial est : %.2f dh \n",Pi);
-    printf("augmentation selon le type de la voiture est : %.2f dh \n",Au);
+    printf("augmentation selon le type de la voiture est : %.2f \n",Au);
     printf("la reduction selon le nombre de jour de location est : -%.2f dh \n",R);
     printf("le prix finale est : %.2f dh \n",Pf);
 
