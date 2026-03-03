@@ -350,7 +350,7 @@ void main ()
         printf("T[%d] = %d \n",i,T[i]);
     }
 
-*/ // ( exercice 16 )    
+*//* ( exercice 16 )    
 
     int T[Nmax] , N , pos , i ;
 
@@ -385,5 +385,78 @@ void main ()
     {
         printf("T[%d] = %d \n",i,T[i]); 
     }
- 
+*//* ( exercice 17 )
+    int T[Nmax] , N , i , pos = -1 , X ;
+
+    do
+    {
+        printf("le nombre de taille : \n");
+        scanf("%d",&N);
+    } while ( N <= 0 || N >= Nmax );
+    
+    for ( i = 0 ; i < N ; i++)
+    {
+        printf("T[%d] = \n",i);
+        scanf("%d",&T[i]);
+    }
+    
+    printf("X : \n");
+    scanf("%d",&X);
+
+    for ( i = 0; i < N ; i++)
+    {
+        if ( T[i] == X )
+        {
+            pos = i ;
+        }
+    }
+    if ( pos == -1 )
+    {
+        printf("X n'existe pas \n");
+    }
+    else 
+    {
+        printf("X existe et ca position est %d \n",pos+1);
+    }
+*//* ( exercice 18 )
+    int T1[Nmax] , T2[Nmax] , T3[Nmax] , N , P , X , i ;
+
+    do
+    {
+        printf("entrer le nombre de taille de T1 : \n");
+        scanf("%d",&N);
+    } while ( N <= 0 || N >= Nmax );
+    do
+    {
+        printf("entrer le nombre de taille de T2 : \n");
+        scanf("%d",&P);
+    } while ( N <= 0 || N >= Nmax );
+    
+    for ( i = 0 ; i < N ; i++)
+    {
+        printf("T1[%d] = \n",i+1);
+        scanf("%d",&T1[i]);
+    }
+    for ( i = 0 ; i < P ; i++)
+    {
+        printf("T2[%d] = \n",i+1);
+        scanf("%d",&T2[i]);
+    }
+    
+    X = P + N ;
+
+    for ( i = 0 ; i < N ; i++)
+    {
+        T3[i] = T1[i] ;
+    }
+    for ( i = 0 ; i < P ; i++)
+    {
+        T3[N+i] = T2[i] ;
+    }
+    
+    for ( i = 0 ; i < X ; i++)
+    {
+        printf("T3[%d] = %d \t",i+1,T3[i]);
+    }
+*/    
 }
