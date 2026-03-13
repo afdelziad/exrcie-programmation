@@ -418,7 +418,7 @@ void main ()
     {
         printf("X existe et ca position est %d \n",pos+1);
     }
-*//* ( exercice 18 )
+*/ ( exercice 18 )
     int T1[Nmax] , T2[Nmax] , T3[Nmax] , N , P , X , i ;
 
     do
@@ -458,5 +458,5 @@ void main ()
     {
         printf("T3[%d] = %d \t",i+1,T3[i]);
     }
-*/    
+    
 }
