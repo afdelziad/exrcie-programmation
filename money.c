@@ -5,7 +5,7 @@ void main ()
 {
       int b200 , b100 , b50 , b20 , p10 , p5 , p1 ;
       int Argent ;
-
+    
     printf ("entrer la somme d argent : \n ");
     scanf("%d",&Argent);
 
