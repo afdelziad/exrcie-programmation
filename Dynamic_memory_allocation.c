@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define Nmax 100
-
+/*
 void main()
-{/*
+{
     char *P1 , *P2 , *P3 ;
 
     P1 = malloc(100) ;
@@ -221,7 +221,7 @@ void main()
     free(T);
     free(min);
     free(N);
-*/
+*//*
     int *N = malloc(sizeof(int));
     int S = 0 , X ;
     float M ;
@@ -282,6 +282,79 @@ void main()
         printf("Do you want to add another Notes (Y/N) : ");
         scanf(" %c",&answer);
     }
+}
+*/
+int temp ;
+
+void ascending(int *T , int *N)
+{
+    for ( int i = 0 ; i < *N - 1 ; i++ )
+    {
+        for ( int j = i ; j < *N ; j++ )
+        {
+            if ( *(T+i) > *(T+j) )
+            {
+                temp = *(T+i) ;
+                *(T+i) = *(T+j) ;
+                *(T+j) = temp ;
+            }    
+        }
+    }
+
+    printf("the table in ascending order : \n");
+
+    for ( int i = 0 ; i < *N ; i++ )
+    {
+        printf("%d \t",*(T+i));
+    }
+
+    printf("\n");   
+}
+
+void descending(int *T , int *N)
+{
+    for ( int i = 0 ; i < *N - 1 ; i++)
+    {
+        for ( int j = i ; j < *N ; j++)
+        {
+            if ( *(T+i) < *(T+j) )
+            {
+                temp = *(T+i) ;
+                *(T+i) = *(T+j) ;
+                *(T+j) = temp ;
+            }
+        }
+    }
     
+    printf("The table in descending order : \n");
+
+    for ( int i = 0 ; i < *N ; i++ )
+    {
+        printf("%d \t",*(T+i));
+    }
     
+    printf("\n");
+
+}
+
+void main()
+{
+    int *N = malloc(sizeof(int));
+
+    do
+    {
+        printf("The value of N : ");
+        scanf("%d",N);
+    } while ( *N < 0 || *N > Nmax );
+
+    int *T = calloc(*N,sizeof(int));
+
+    for ( int i = 0 ; i < *N ; i++)
+    {
+        printf("T[%d] = ",i+1);
+        scanf("%d",(T+i));
+    }
+    
+    ascending(T,N);
+    descending(T,N);
 }
